@@ -1,13 +1,13 @@
 # Gradle
-# task: FortifySCA@7
+- task: FortifySCA@7
   inputs:
-    licenseFile: 'C:\Users\VinN\Documents\Fortify_SCA_and_Apps_20.2.0\fortify.license'
     runBuildTranslate: true
-    applicationType: 'other'
-    fortifyBuildId: 'gradlew'
+    applicationType: 'dotnet'
+    fortifyProjects: '**\*.sln'
     runFortifyRulepackUpdate: false
     runFortifyClean: true
     scaVerbose: false
     scaDebug: false
     runFortifyScan: true
     fortifyScanType: 'Local'
+
