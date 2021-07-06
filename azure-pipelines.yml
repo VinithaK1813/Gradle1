@@ -1,24 +1,8 @@
-# File: azure-pipelines.yml
-parameters:
-- name: image
-  displayName: Pool Image
-  type: string
-  default: ubuntu-latest
-  values:
-  - windows-latest
-  - vs2017-win2016
-  - ubuntu-latest
-  - ubuntu-16.04
-  - macOS-latest
-  - macOS-10.14
-
-trigger: none
-
-jobs:
-- job: build
-  displayName: build
-  pool: 
-    vmImage: ${{ parameters.image }}
-  steps:
-  - script: echo The image parameter is ${{ parameters.image }}```
+steps:
+- task: fortifyvsts.hpe-security-fortify-vsts.build-task-fortify-sca.FortifySCA@7
+  displayName: 'Run Fortify on '
+  inputs:
+    licenseFile: 'C:\Users\VinN\Documents\Fortify_SCA_and_Apps_20.2.0\fortify.license'
+    applicationType: other
+    fortifyBuildId: gradle
 
