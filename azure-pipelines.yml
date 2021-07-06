@@ -1,13 +1,5 @@
 # Gradle
-- task: FortifySCA@7
-  inputs:
-    runBuildTranslate: true
-    applicationType: 'dotnet'
-    fortifyProjects: '**\*.sln'
-    runFortifyRulepackUpdate: false
-    runFortifyClean: true
-    scaVerbose: false
-    scaDebug: false
-    runFortifyScan: true
-    fortifyScanType: 'Local'
+- task: DotNetCoreCLI@2
+  inputs
+    command: 'build'
 
